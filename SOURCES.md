@@ -8,7 +8,7 @@
 
 Тексты и адаптированная база: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/. Wikibooks — авторы сообщества (история правок доступна в исходной статье); Portionly — перевод, домашняя адаптация, порции, варианты и пересчёт КБЖУ. Based Cooking передаёт тексты и фото в public domain: https://github.com/LukeSmithxyz/based.cooking#license. Good Food и King Arthur Baking использованы для проверки технологии; их фото и длинные тексты не включены.
 
-Снимки являются иллюстрациями того же вида еды. Близкие варианты используют общую фотографию; это видно в подписи к карточке. Все 400 файлов фото локальные. Полная атрибуция и условия: IMAGE_LICENSES.json.
+Все 400 изображений сгенерированы отдельно по составу и технологии рецептов. В этой версии фотографии сторонних авторов не используются. Файлы локальные, WebP до 800 px. Описание: GENERATED_IMAGES.md; запросы: GENERATION_PROMPTS.json; соответствия: IMAGE_LICENSES.json.
 
 Проверка основных температур приготовления: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart.
 
