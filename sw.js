@@ -1,4 +1,4 @@
-const VERSION='portionly-shell-v1.1.0';
+const VERSION='portionly-shell-v1.2.0';
 const MEDIA='portionly-photos-v2';
 const SHELL=['./','./index.html','./styles.css','./app.js','./core.js','./db.js','./data/recipes.json','./manifest.webmanifest','./assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/maskable-512.png','./assets/icons/apple-touch-icon.png','./assets/icons/photo-offline.svg','./GENERATED_IMAGES.md','./IMAGE_LICENSES.json','./SOURCES.md'];
 const base=new URL('./',self.location);
