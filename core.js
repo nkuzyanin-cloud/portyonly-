@@ -21,6 +21,26 @@ export function cook(state,recipe,{portions,actualPortions=portions,days,date=da
 for(const i of scaledIngredients(recipe,portions)){const k=ingredientKey(i),s=state.pantry[k];if(s&&i.quantity!==null){s.quantity=amount(Math.max(0,s.quantity-i.quantity));if(s.quantity===0)delete state.pantry[k];}}
 return {batch,shortage:Math.max(0,amount(reserved-actualPortions))};}
 export function eat(state,id){const e=state.plan.find(p=>p.id===id);if(!e)throw Error('Приём пищи не найден.');const b=state.batches.find(b=>b.id===e.batchId);if(!b)throw Error('Сначала приготовьте блюдо.');if(e.eatenAt){b.remaining=amount(b.remaining+e.portions);b.initial=Math.max(b.initial,b.remaining);e.eatenAt=null;return;}if(b.remaining+.001<e.portions)throw Error(`В заготовке осталось ${b.remaining} порций, нужно ${e.portions}. Приготовьте новую партию или измените этот приём пищи.`);b.remaining=amount(Math.max(0,b.remaining-e.portions));e.eatenAt=new Date().toISOString();}
+// Explicit, idempotent confirmation: a double tap must never undo a meal.
+export function consume(state,id,quantity){
+ const e=state.plan.find(p=>p.id===id);if(!e)throw Error('Приём пищи не найден.');
+ if(e.eatenAt)return false;
+ if(!finiteRange(quantity,.01,100))throw Error('Укажите количество съеденных порций.');
+ if(amount(quantity)!==e.portions)moveEntry(state,id,{date:e.date,meal:e.meal,portions:quantity});
+ eat(state,id);return true;
+}
+export function todayOverview(state,recipes,date=dateKey()){
+ const entries=state.plan.filter(e=>e.date===date).sort((a,b)=>Object.keys(MEALS).indexOf(a.meal)-Object.keys(MEALS).indexOf(b.meal));
+ const pending=entries.filter(e=>!e.eatenAt&&!e.batchId),jobIds=new Set(pending.map(e=>e.jobId));
+ const available=new Map(state.batches.map(b=>[b.id,b.remaining])),ready=[],shortage=[];
+ for(const e of entries.filter(e=>!e.eatenAt&&e.batchId)){
+  const left=available.get(e.batchId)||0;
+  if(left+.001>=e.portions){ready.push(e);available.set(e.batchId,amount(left-e.portions));}else shortage.push(e);
+ }
+ const todayState={...state,jobs:state.jobs.filter(j=>jobIds.has(j.id)),manual:[]};
+ const shoppingAll=shopping(todayState,recipes);
+ return {entries,pending,ready,shortage,jobIds,shoppingAll,shopping:shoppingAll.filter(i=>!i.covered),missingMeals:Object.keys(MEALS).filter(meal=>!entries.some(e=>e.meal===meal)),completed:entries.filter(e=>e.eatenAt)};
+}
 export function batchRemaining(state,id,value){if(!finiteRange(value,0,100))throw Error('Остаток должен быть от 0 до 100.');const b=state.batches.find(b=>b.id===id);if(!b)throw Error('Заготовка не найдена.');b.remaining=amount(value);b.initial=Math.max(b.initial,b.remaining);}
 export function rebindEntry(state,id,batchId){const e=state.plan.find(p=>p.id===id),b=state.batches.find(b=>b.id===batchId);if(!e||!b||e.eatenAt||e.recipeId!==b.recipeId)throw Error('Нельзя связать этот приём пищи с заготовкой.');const reserved=state.plan.filter(p=>p.id!==id&&p.batchId===b.id&&!p.eatenAt).reduce((n,p)=>n+p.portions,0);if(reserved+e.portions>b.remaining+.001)throw Error('В этой заготовке недостаточно свободных порций.');const oldId=e.jobId; e.jobId=null;e.batchId=b.id;const job=state.jobs.find(j=>j.id===oldId);if(job&&!job.cookedBatchId){const es=state.plan.filter(p=>p.jobId===oldId);if(es.length){job.portions=amount(es.reduce((n,p)=>n+p.portions,0));job.days=es.length;job.startDate=es.map(p=>p.date).sort()[0];}else state.jobs=state.jobs.filter(j=>j.id!==oldId);}}
 export function moveEntry(state,id,{date,meal,portions}){const e=state.plan.find(e=>e.id===id);if(!e||e.eatenAt||!validDate(date)||!MEALS[meal]||!finiteRange(portions,.01,100))throw Error('Проверьте дату, приём пищи и порции.');const b=state.batches.find(b=>b.id===e.batchId);if(b){const other=state.plan.filter(p=>p.batchId===b.id&&!p.eatenAt&&p.id!==id).reduce((n,p)=>n+p.portions,0);if(other+portions>b.remaining+.001)throw Error('В заготовке недостаточно свободных порций.');}const j=state.jobs.find(j=>j.id===e.jobId);if(j&&!j.cookedBatchId){const other=state.plan.filter(p=>p.jobId===j.id&&p.id!==id).reduce((n,p)=>n+p.portions,0);if(other+portions>100)throw Error('В одной партии может быть до 100 порций. Добавьте отдельное приготовление.');j.portions=amount(other+portions);j.startDate=[date,...state.plan.filter(p=>p.jobId===j.id&&p.id!==id).map(p=>p.date)].sort()[0];}Object.assign(e,{date,meal,portions:amount(portions)});}

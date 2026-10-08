@@ -1,19 +1,22 @@
 # Источники базы блюд
 
-400 рецептов: по 100 в категориях завтрак, обед, ужин и десерт. База содержит самостоятельные домашние адаптации и осмысленные варианты основных блюд, а не 400 независимо протестированных авторских рецептов.
+400 домашних рецептов: по 100 завтраков, обедов, ужинов и десертов. Это разнообразные адаптации и варианты основных блюд, а не 400 независимо приготовленных на пробной кухне авторских рецептов.
 
-Состав и базовые приёмы сверены с открытым Wikibooks Cookbook и Based Cooking; каши, суп, холодные десерты и выпечка дополнительно проверены по Good Food и King Arthur Baking. Варианты адаптированы по ингредиентам и размеру домашней партии, поэтому количества и КБЖУ могут отличаться от источника. Инструкции написаны по-русски своими словами. Восемь международных классических рецептов адаптированы из русской открытой базы UniTools.
+В редакции 2 все способы приготовления пересмотрены по собственному составу. Базовые технологии опираются на Wikibooks Cookbook и Based Cooking. Каши, выпечка, начинки, сливочные соусы, холодные десерты и международные блюда дополнительно сверены по первичным публикациям Good Food, King Arthur Baking, Гастрономъ, The Kitchn, RecipeTin Eats, The Woks of Life, GialloZafferano и Spain.info. Количества адаптированы к домашней партии; не каждый вариант повторяет состав источника. Тексты сформулированы по-русски своими словами. Восемь международных блюд сохраняют атрибуцию открытой базы UniTools.
 
-КБЖУ приблизительно на порцию. Для адаптаций рассчитано по средним значениям обычных продуктов; расчёт включает масло, сахар и начинку, не включает незаявленный гарнир. Значения округлены и не учитывают точный выход воды или фактически впитавшееся масло. Для восьми рецептов UniTools сохранена оценка источника.
+КБЖУ приблизительные, на одну порцию. Для домашних адаптаций использованы средние значения продуктов; расчёт включает заявленные масло, сахар и начинку, но не незаявленный гарнир. Для восьми блюд UniTools сохранена ориентировочная оценка источника. В испанской тортилье учтено не всё масло для приготовления, поскольку большая его часть сливается. Точные показатели зависят от брендов продуктов, выхода и фактического впитывания масла.
 
-Тексты и адаптированная база: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/. Wikibooks — авторы сообщества (история правок доступна в исходной статье); Portionly — перевод, домашняя адаптация, порции, варианты и пересчёт КБЖУ. Based Cooking передаёт тексты и фото в public domain: https://github.com/LukeSmithxyz/based.cooking#license. Good Food и King Arthur Baking использованы для проверки технологии; их фото и длинные тексты не включены.
+Адаптированная база: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/. Wikibooks — авторы сообщества, история доступна в статьях; Portionly — перевод, домашние варианты, порции и редактура. Based Cooking — public domain: https://github.com/LukeSmithxyz/based.cooking#license. Прочие кулинарные публикации использованы для проверки фактов и технологии: их фотографии и большие дословные тексты в проект не включены. Ссылки на первоисточники сохранены ниже и в карточках блюд.
 
-Все 400 изображений сгенерированы отдельно по составу и технологии рецептов. В этой версии фотографии сторонних авторов не используются. Файлы локальные, WebP до 800 px. Описание: GENERATED_IMAGES.md; запросы: GENERATION_PROMPTS.json; соответствия: IMAGE_LICENSES.json.
+Все 400 фотографий сгенерированы отдельно и сохранены локально в WebP до 800 px. Фотографии сторонних авторов не используются. В обновлении 1.3 файлы и пути фотографий не изменены. История генерации — GENERATED_IMAGES.md, GENERATION_PROMPTS.json и IMAGE_LICENSES.json.
 
-Проверка основных температур приготовления: https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart.
+Проверка температур готовности: https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures. Плановая дата расхода готовой еды не является сроком безопасного хранения.
+
+Детали редакторской проверки — RECIPE-REVIEW.md; запись для каждого блюда — data/recipe-audit.json.
 
 ## Реестр кулинарных источников
 
+- [Based Cooking · Ukrainian borscht](https://based.cooking/ukrainian-borscht/)
 - [Based Cooking · apple chicken](https://based.cooking/apple-chicken/)
 - [Based Cooking · ardei umpluti](https://based.cooking/ardei-umpluti/)
 - [Based Cooking · arroz chaufa](https://based.cooking/arroz-chaufa/)
@@ -22,7 +25,6 @@
 - [Based Cooking · basic waffles](https://based.cooking/basic-waffles/)
 - [Based Cooking · beef goulash](https://based.cooking/beef-goulash/)
 - [Based Cooking · bolognese sauce](https://based.cooking/bolognese-sauce/)
-- [Based Cooking · borscht](https://based.cooking/borscht/)
 - [Based Cooking · butter chicken masala](https://based.cooking/butter-chicken-masala/)
 - [Based Cooking · cheesy meatballs](https://based.cooking/cheesy-meatballs/)
 - [Based Cooking · couscous](https://based.cooking/couscous/)
@@ -30,7 +32,6 @@
 - [Based Cooking · fall vegetable and chickpea curry](https://based.cooking/fall-vegetable-and-chickpea-curry/)
 - [Based Cooking · fennel bean kale soup](https://based.cooking/fennel-bean-kale-soup/)
 - [Based Cooking · french toast](https://based.cooking/french-toast/)
-- [Based Cooking · fried anglerfish fillet](https://based.cooking/fried-anglerfish-fillet/)
 - [Based Cooking · hearty breakfast oatmeal](https://based.cooking/hearty-breakfast-oatmeal/)
 - [Based Cooking · lemon and oregano chicken traybake](https://based.cooking/lemon-and-oregano-chicken-traybake/)
 - [Based Cooking · lentejas](https://based.cooking/lentejas/)
@@ -49,19 +50,30 @@
 - [Based Cooking · tiramisu](https://based.cooking/tiramisu/)
 - [Based Cooking · tuscan style pork roast](https://based.cooking/tuscan-style-pork-roast/)
 - [Based Cooking · yogurt cake](https://based.cooking/yogurt-cake/)
+- [GialloZafferano · Amatriciana](https://www.giallozafferano.com/recipes/Spaghetti-Amatriciana-Bacon-and-tomato-spaghetti.html)
+- [Good Food · Avocado toast](https://www.bbcgoodfood.com/recipes/avocado-toast)
+- [Good Food · Chicken supreme (технология сливочного соуса; адаптация для индейки)](https://www.bbcgoodfood.com/recipes/chicken-supreme)
+- [Good Food · Ham & cheese toastie (проверка сочетания; домашняя версия на сковороде)](https://www.bbcgoodfood.com/recipes/air-fryer-cheese-ham-toastie)
+- [Good Food · Tomato & thyme cod (технология тушения рыбы)](https://www.bbcgoodfood.com/recipes/tomato-thyme-cod)
+- [Good Food · Vanilla panna cotta](https://www.bbcgoodfood.com/recipes/vanilla-panna-cotta)
 - [Good Food · baked apples](https://www.bbcgoodfood.com/recipes/baked-apples)
 - [Good Food · best ever chocolate brownies recipe](https://www.bbcgoodfood.com/recipes/best-ever-chocolate-brownies-recipe)
 - [Good Food · best ever tiramisu](https://www.bbcgoodfood.com/recipes/best-ever-tiramisu)
 - [Good Food · chia pudding](https://www.bbcgoodfood.com/recipes/chia-pudding)
-- [Good Food · easy chocolate mousse](https://www.bbcgoodfood.com/recipes/easy-chocolate-mousse)
 - [Good Food · overnight oats](https://www.bbcgoodfood.com/recipes/overnight-oats)
-- [Good Food · panna cotta](https://www.bbcgoodfood.com/recipes/panna-cotta)
 - [Good Food · perfect porridge](https://www.bbcgoodfood.com/recipes/perfect-porridge)
 - [Good Food · pumpkin soup](https://www.bbcgoodfood.com/recipes/pumpkin-soup)
 - [Good Food · roast chicken soup](https://www.bbcgoodfood.com/recipes/roast-chicken-soup)
 - [Good Food · vanilla cheesecake](https://www.bbcgoodfood.com/recipes/vanilla-cheesecake)
-- [King Arthur Baking — Blueberry Muffins](https://www.kingarthurbaking.com/recipes/blueberry-muffins-recipe)
-- [UniTools — Russian recipe dataset, CC BY-SA 4.0](https://theunitools.com/en/data)
+- [King Arthur Baking · Blueberry muffins](https://www.kingarthurbaking.com/recipes/blueberry-muffins-recipe)
+- [King Arthur Baking · Parisian street-vendor crêpes](https://www.kingarthurbaking.com/recipes/parisian-street-vendor-crepes-recipe)
+- [RecipeTin Eats · Carbonara](https://www.recipetineats.com/carbonara/)
+- [RecipeTin Eats · Spanish tortilla](https://www.recipetineats.com/spanish-tortilla-omelette/)
+- [RecipeTin Eats · Vietnamese pho](https://www.recipetineats.com/vietnamese-pho-recipe/)
+- [Spain.info · Paella valenciana](https://www.spain.info/en/recipe/paella/)
+- [The Kitchn · Chocolate mousse without eggs](https://www.thekitchn.com/chocolate-mousse-22949276)
+- [The Woks of Life · Mapo tofu](https://thewoksoflife.com/ma-po-tofu-real-deal/)
+- [UniTools — открытая база рецептов](https://theunitools.com/en/data)
 - [Wikibooks Cookbook · Apple Pie I](https://en.wikibooks.org/wiki/Cookbook:Apple_Pie_I)
 - [Wikibooks Cookbook · Apple-Pear Crumble](https://en.wikibooks.org/wiki/Cookbook:Apple-Pear_Crumble)
 - [Wikibooks Cookbook · Asparagus Frittata](https://en.wikibooks.org/wiki/Cookbook:Asparagus_Frittata)
@@ -77,9 +89,7 @@
 - [Wikibooks Cookbook · Chicken and Broccoli Casserole](https://en.wikibooks.org/wiki/Cookbook:Chicken_and_Broccoli_Casserole)
 - [Wikibooks Cookbook · Chocolate Chip Cookies I](https://en.wikibooks.org/wiki/Cookbook:Chocolate_Chip_Cookies_I)
 - [Wikibooks Cookbook · Chocolate Chocolate Chip Muffins](https://en.wikibooks.org/wiki/Cookbook:Chocolate_Chocolate_Chip_Muffins)
-- [Wikibooks Cookbook · Chocolate Mousse](https://en.wikibooks.org/wiki/Cookbook:Chocolate_Mousse)
 - [Wikibooks Cookbook · Chocolate Truffles](https://en.wikibooks.org/wiki/Cookbook:Chocolate_Truffles)
-- [Wikibooks Cookbook · Cottage Cheese Pancakes](https://en.wikibooks.org/wiki/Cookbook:Cottage_Cheese_Pancakes)
 - [Wikibooks Cookbook · Cream of Mushroom Soup](https://en.wikibooks.org/wiki/Cookbook:Cream_of_Mushroom_Soup)
 - [Wikibooks Cookbook · Creamy Mushroom Pasta](https://en.wikibooks.org/wiki/Cookbook:Creamy_Mushroom_Pasta)
 - [Wikibooks Cookbook · Crêpes I](https://en.wikibooks.org/wiki/Cookbook:Cr%C3%AApes_I)
@@ -92,7 +102,6 @@
 - [Wikibooks Cookbook · Grilled Salmon with Lemon Butter Sauce](https://en.wikibooks.org/wiki/Cookbook:Grilled_Salmon_with_Lemon_Butter_Sauce)
 - [Wikibooks Cookbook · Honey Mustard Salmon](https://en.wikibooks.org/wiki/Cookbook:Honey_Mustard_Salmon)
 - [Wikibooks Cookbook · Italian Meatballs](https://en.wikibooks.org/wiki/Cookbook:Italian_Meatballs)
-- [Wikibooks Cookbook · Italian Poached Salmon](https://en.wikibooks.org/wiki/Cookbook:Italian_Poached_Salmon)
 - [Wikibooks Cookbook · Kheer (Rice Pudding)](https://en.wikibooks.org/wiki/Cookbook:Kheer_(Rice_Pudding))
 - [Wikibooks Cookbook · Lentil Soup](https://en.wikibooks.org/wiki/Cookbook:Lentil_Soup)
 - [Wikibooks Cookbook · Mini English Muffin Pizzas](https://en.wikibooks.org/wiki/Cookbook:Mini_English_Muffin_Pizzas)
@@ -113,3 +122,4 @@
 - [Wikibooks Cookbook · Vegetable Salad](https://en.wikibooks.org/wiki/Cookbook:Vegetable_Salad)
 - [Wikibooks Cookbook · Vegetable Soup](https://en.wikibooks.org/wiki/Cookbook:Vegetable_Soup)
 - [Wikibooks Cookbook · Waffles](https://en.wikibooks.org/wiki/Cookbook:Waffles)
+- [Гастрономъ · Сырники классические](https://www.gastronom.ru/recipe/27431/syrniki-klassicheskie)
