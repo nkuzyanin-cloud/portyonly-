@@ -1,6 +1,6 @@
-const VERSION='portionly-shell-v1.3.0';
+const VERSION='portionly-shell-v1.4.0';
 const MEDIA='portionly-photos-v2';
-const SHELL=['./','./index.html','./styles.css','./app.js','./core.js','./db.js','./data/recipes.json','./manifest.webmanifest','./assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/maskable-512.png','./assets/icons/apple-touch-icon.png','./assets/icons/photo-offline.svg','./GENERATED_IMAGES.md','./IMAGE_LICENSES.json','./SOURCES.md'];
+const SHELL=['./','./index.html','./styles.css','./app.js','./core.js','./db.js','./data/recipes.json','./manifest.webmanifest','./assets/icons/icon-192.png','./assets/icons/icon-512.png','./assets/icons/maskable-512.png','./assets/icons/apple-touch-icon.png','./assets/icons/photo-offline.svg'];
 const base=new URL('./',self.location);
 self.addEventListener('install',event=>event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL.map(p=>new Request(new URL(p,base),{cache:'reload'}))))));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if((key.startsWith('portionly-shell-')&&key!==VERSION)||(key.startsWith('portionly-photos-')&&key!==MEDIA))await caches.delete(key);await self.clients.claim();})()));
